@@ -1,10 +1,17 @@
 $font-family: 'Josefin Sans', sans-serif
 $color-contenido: #887ef4
 $font-titulo: 'Josefin Slab', serif
+$color-nav: #023859
 
 *
     margin: 0
     padding: 0
+    box-sizing: border-box
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+
+.menu_bar
+    display: none
 
 body
     background: #d7e9ec
@@ -14,26 +21,90 @@ body
     width: 80%
     max-width: 1000px
     margin: 0 auto
+    .title
+        margin-top: 30px
+        margin-bottom: 30px
+        background-color: #023859
+        padding-top: 20px
+        padding-bottom:  20px
+        h1
+            color: #fff
+            padding: 20px
+            padding-right: 10%
+            text-align: right
+            font-family: $font-titulo
+
+        .honduras
+            width: 10%
+            margin-left: 20px
+            max-height: 400px
+            float: left 
+            border-radius: 50%
+            height: auto
+            overflow: hidden
+            display: block
+            
+
+
+
 
 							
 header
-    background: #9bc9c8
-    margin: 40px 0
-  
-    h1
-        color: #fff
-        padding: 20px
-        padding-right: 10%
-        text-align: right
-        font-family: $font-titulo
+    width: 100%
+    
+    nav
+        z-index: 1000
+        max-width: 1000px
+        width: 100%
+        background: #023859
+        margin: 20px auto
+    
+        ul
+            list-style: none
+            li
+                display: inline-block
+                position: relative
+                a
+                    color: #fff
+                    font-family: $font-family
+                    text-decoration: none
+                    padding: 20px
+                    display: block
+                    
+                    span
+                        margin-right: 10px
+                &:hover
+                    background: #E6344A
+                    .children
+                        display: block
+                .children
+                    display: none
+                    position: absolute
+                    background: #011826
+                    width: 150%
+                    z-index: 1000
+                    
+                    li
+                        display: block
+                        overflow: hidden
+                        border-bottom: 1px solid rgba(255,255,255,.5)
+                        a
+                            display: block
+                            span
+                                float: right
+                                position: relative
+                                top: 3px
+                                margin-right: 0
+                                margin-left: 10px
+                .caret
+                    position: relative
+                    top: 3px
+                    margin-left: 10px
+                    margin-right: 0px                        
 
-    .honduras
-        width: 10%
-        margin-left: 20px
-        max-height: 400px
-        float: left 
-        border-radius: 50%
-        height: auto
+
+  
+    
         
         
 
@@ -75,10 +146,72 @@ footer
     color: $color-contenido
     background: #e1f2d1
 
-@media screen and(max-width: 800px)
+@media screen and (max-width: 800px)
+    body
+        padding-top: 80px
+    .menu_bar
+        display: block
+        width: 100%
+        position: fixed
+        top: 0
+        background: #E6344A
+        .bt-list
+            display: block
+            padding: 20px
+            color: #fff
+            overflow: hidden
+            font-size: 25px
+            font-weight: bold
+            text-decoration: none
+        span
+            float: right
+            font-size: 40px
+
+    header
+        nav
+            width: 80%
+            height: calc(100% - 80px)
+            position: fixed
+            right: 100%
+            margin: 0
+            overflow: scroll
+            ul
+                li
+                
+                    display: block
+                    border-bottom: 1px solid rgba(255,255,255,.5)
+                    a
+                        display: block
+                    .children
+                        width: 100%
+                        position: relative
+                        li
+                            a
+                                margin-left: 20px
+                    .caret
+                        float: right
+                    &:hover
+                        .children
+                            display: none
     .main
         width: 100%
+
     aside
         width: 100%
+        display: block
+        margin-top: 20px 
+
+
+
+
+
 
     
+
+
+            
+
+
+                
+
+
